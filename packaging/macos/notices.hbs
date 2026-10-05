@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Autoclicker X20 — Third-party notices</title>
+<h1>Third-party notices</h1>
+<p>Licenses and original notices for the locked Apple Silicon dependency graph.</p>
+{{#each licenses}}
+<section><h2>{{name}}</h2><ul>
+{{#each used_by}}<li>{{crate.name}} {{crate.version}}</li>{{/each}}
+</ul><pre>{{text}}</pre></section>
+{{/each}}
+</html>

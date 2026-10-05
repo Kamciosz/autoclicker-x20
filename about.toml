@@ -1,0 +1,4 @@
+accepted = ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "Zlib", "MPL-2.0", "Unicode-3.0", "BSL-1.0", "CC0-1.0", "NCSA", "OpenSSL", "0BSD", "bzip2-1.0.6"]
+targets = ["aarch64-apple-darwin"]
+ignore-dev-dependencies = true
+ignore-build-dependencies = false
