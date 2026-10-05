@@ -1,0 +1,32 @@
+[package]
+name = "autoclicker-x20"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "MIT"
+description = "A small, safety-conscious macOS autoclicker built with GPUI Kit."
+repository = "https://github.com/Kamciosz/autoclicker-x20"
+publish = false
+
+[dependencies]
+core-graphics = "=0.25.0"
+global-hotkey = "=0.8.0"
+gpui-kit = "=0.7.1"
+block2 = "=0.6.2"
+objc2 = "=0.6.4"
+objc2-app-kit = { version = "=0.3.2", default-features = false, features = ["NSWorkspace"] }
+objc2-foundation = { version = "=0.3.2", default-features = false, features = ["NSNotification", "NSString", "NSOperation", "block2"] }
+
+[dev-dependencies]
+gpui-kit = { version = "=0.7.1", features = ["test-support"] }
+
+[profile.dev.package]
+gpui-pre = { opt-level = 3 }
+gpui-pre-platform = { opt-level = 3 }
+gpui-pre-macros = { opt-level = 3 }
+gpui-component = { opt-level = 3 }
+gpui-kit = { opt-level = 3 }
+gpui-kit-assets = { opt-level = 3 }
+rustybuzz = { opt-level = 3 }
+taffy = { opt-level = 3 }
+ttf-parser = { opt-level = 3 }
