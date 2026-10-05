@@ -12,7 +12,8 @@ Sprawdzony alias `stable` raportuje dokładnie 1.97.1 i służył do lokalnych b
 - PASS: fmt, check, test i clippy z lockfile oraz `-D warnings`.
 - PASS: automat z kontrolowanym zegarem, atrapa myszy i produkcyjny widok GPUI.
 - PASS: release arm64, plist, bundle ID i weryfikacja podpisu ad hoc.
-- PASS: uruchomienie paczki z `dist/`, bez zależności od katalogu `target/`.
+- PASS: uruchomienie rozpakowanej paczki z katalogu tymczasowego, poza repo
+  i bez zależności od katalogu `target/`.
 - PASS: Start bez zgody systemowej pokazuje blokadę i pozostawia licznik równy zero.
 - PASS: zamknięcie jedynego okna kończy proces.
 - PASS: cargo-audit nie zgłosił znanych podatności w lockfile.
@@ -20,6 +21,11 @@ Sprawdzony alias `stable` raportuje dokładnie 1.97.1 i służył do lokalnych b
 Cargo-audit zgłosił nieutrzymywane zależności pośrednie: instant, paste, rustls-pemfile,
 rustybuzz i ttf-parser. Kompilator zgłasza przyszłą niezgodność zależności block 0.1.6.
 Nie są to wyciszone ostrzeżenia kodu aplikacji.
+
+Pakowanie podpisuje aplikację w systemowym katalogu tymczasowym i tworzy ZIP
+bez rozszerzonych atrybutów. Finder lub dostawca plików może później dopisać
+metadane do kopii w `dist/`, dlatego podpis wydania sprawdzono po rozpakowaniu ZIP
+do nowego katalogu tymczasowego.
 
 ## UNVERIFIED
 
