@@ -15,6 +15,7 @@ Sprawdzony alias `stable` raportuje dokładnie 1.97.1 i służył do lokalnych b
 - PASS: uruchomienie rozpakowanej paczki z katalogu tymczasowego, poza repo
   i bez zależności od katalogu `target/`.
 - PASS: Start bez zgody systemowej pokazuje blokadę i pozostawia licznik równy zero.
+- PASS: natywny Escape po zablokowanym Starcie przywraca stan „Gotowy”.
 - PASS: zamknięcie jedynego okna kończy proces.
 - PASS: cargo-audit nie zgłosił znanych podatności w lockfile.
 
@@ -32,7 +33,8 @@ do nowego katalogu tymczasowego.
 - Rzeczywisty lewy/prawy/dwuklik na neutralnym celu: paczka nie ma zgody Dostępność.
 - Globalne skróty z aktywnym i nieaktywnym oknem: próba przez narzędzie UI nie wykazała
   zmiany stanu. Rejestracja nie zwróciła błędu, ale to nie potwierdza działania skrótów.
-- Natywne Escape: test GPUI przechodzi; próba narzędziem UI nie potwierdziła zmiany stanu.
+- Natywne Escape podczas rzeczywistego klikania: test GPUI przechodzi,
+  ale test natywny objął tylko stan po zablokowanym Starcie.
 - Zatrzymanie aktywnego klikania przy prawdziwym uśpieniu lub odebraniu zgody.
 - Konflikt skrótów z inną aplikacją; lokalna rejestracja zakończyła się bez błędu.
 - VoiceOver, Intel oraz starsze wersje macOS.
