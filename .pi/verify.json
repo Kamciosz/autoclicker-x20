@@ -1,0 +1,4 @@
+{
+  "command": "cargo check --quiet",
+  "timeoutMs": 180000
+}
